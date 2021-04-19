@@ -4,7 +4,7 @@ export class Producto {
   binomialName: string;
   price: number;
   imgUrl: string;
-  wateringPerWeek: number;
+  wateringsPerWeek: number;
   fertilizerType: string;
   heightInCm: number;
   constructor(
@@ -13,7 +13,7 @@ export class Producto {
     binomialName: string,
     price: number,
     imgUrl: string,
-    wateringPerWeek: number,
+    wateringsPerWeek: number,
     fertilizerType: string,
     heightInCm: number
   ) {
@@ -22,7 +22,7 @@ export class Producto {
     this.binomialName = binomialName;
     this.price = price;
     this.imgUrl = imgUrl;
-    this.wateringPerWeek = wateringPerWeek;
+    this.wateringsPerWeek = wateringsPerWeek;
     this.fertilizerType = fertilizerType;
     this.heightInCm = heightInCm;
   }
