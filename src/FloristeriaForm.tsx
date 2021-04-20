@@ -66,10 +66,17 @@ export const FloristeriaForm = () => {
     });
 
     return (
-      <div>
-        <div>
-          <label htmlFor="search">Search</label>
-          <input type="text" id="search" onChange={handleChange} />
+      <div className="container-fluid">
+        <div className="navbar navbar-light bg-light">
+          <div className="container-fluid">
+            <label htmlFor="search">Search</label>
+            <input
+              className="form-control me-2"
+              type="text"
+              id="search"
+              onChange={handleChange}
+            />
+          </div>
         </div>
         <div className="row">
           {productosName.map((resul) => (
@@ -79,9 +86,11 @@ export const FloristeriaForm = () => {
                 alt="flower image"
                 className="flower_img"
               />
-              <p>{resul.name}</p>
-              <p>{resul.binomialName}</p>
-              <p>{resul.price + "€"}</p>
+              <div className="card-body">
+                <h5>{resul.name}</h5>
+                <p>{resul.binomialName}</p>
+                <p>{resul.price + "€"}</p>
+              </div>
             </div>
           ))}
         </div>
@@ -100,19 +109,36 @@ export const FloristeriaForm = () => {
 
     return (
       <div>
-        <div>
-          <button onClick={resetId}>BACK</button>
+        <div className="row">
+          <div
+            className="navbar navbar-light 
+           offset-10"
+          >
+            <div className="container-fluid">
+              <div className="d-flex btn btn-primary">
+                <button className="form-control me-2" onClick={resetId}>
+                  BACK
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
-        <div>
-          <img src={productoDetails.imgUrl} alt="" />
-        </div>
-        <div>
-          <p>{"Name: " + productoDetails.name}</p>
-          <p>{"Binomial name: " + productoDetails.binomialName}</p>
-          <p>{"Price: " + productoDetails.price + "€"}</p>
-          <p>{"Watering per week: " + productoDetails.wateringsPerWeek}</p>
-          <p>{"Fertilizer type: " + productoDetails.fertilizerType}</p>
-          <p>{"Height: " + productoDetails.heightInCm + "cm"}</p>
+        <div className="row ">
+          <div className="col-8">
+            <div className="img-fluid rounded ">
+              <img src={productoDetails.imgUrl} alt="" />
+            </div>
+          </div>
+          <div className="card col-4">
+            <div className="card-body">
+              <h5>{"Name: " + productoDetails.name}</h5>
+              <p>{"Binomial name: " + productoDetails.binomialName}</p>
+              <p>{"Price: " + productoDetails.price + "€"}</p>
+              <p>{"Watering per week: " + productoDetails.wateringsPerWeek}</p>
+              <p>{"Fertilizer type: " + productoDetails.fertilizerType}</p>
+              <p>{"Height: " + productoDetails.heightInCm + "cm"}</p>
+            </div>
+          </div>
         </div>
       </div>
     );
